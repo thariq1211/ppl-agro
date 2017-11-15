@@ -41,9 +41,9 @@ class cekHasil extends Controller{
     public function tampilkanHasil(Request $request){
 //        mengecek hasil produksi
         $request->session()->put('hujan',$request->hujan);
-        $lahan = $request->luasLahan;
+        $lahan = $request->session()->get('luasLahan');
         $luasLahan = $lahan *10000;
-        $jarakTanam = $request->jarakTanam;
+        $jarakTanam = $request->session()->get('jarakTanam');
 
         $buah = $request->session()->get('jenisbuah');
         $tekstur = $request->session()->get('teksturTanah');
@@ -52,9 +52,8 @@ class cekHasil extends Controller{
         $suhu = $request->session()->get('suhu');
         $cahaya = $request->session()->get('cahaya');
         $hujan = $request->session()->get('hujan');
-        echo "jarak ".$jarakTanam ." -luas ". $luasLahan." -jenis ".$buah." -tekstur ".$tekstur;
         $hasil =  ($luasLahan / $jarakTanam) * 4; //mengecek hasil kilogram perluas lahan
-//        $request->session()->put('hasilproduksi',$hasil);
+        $request->session()->put('hasilproduksi',$hasil);
 //        =========================================================
 //        pengecekan hasil buah naga merah grade A
         if ($buah=='merah'){
@@ -774,5 +773,9 @@ class cekHasil extends Controller{
         $request->session()->put('gradeB',$hasilAnalisisB);
         $request->session()->put('gradeC',$hasilAnalisisC);
         return view ('showHasil');
+    }
+    public function Ulang (Request $request){
+        $request->session()->flush();
+        return view('simulasi_jenisBuah');
     }
 }
