@@ -159,19 +159,24 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			<h3 class="w3stitle">LAYANAN KAMI</h3>  
 			<div class="services-w3ls-row">
 				<div class="col-md-4 col-sm-3 col-xs-6 services-grid agileits-w3layouts">
-					<span class="glyphicon glyphicon-grain effect-1" aria-hidden="true"></a></span>
-					<h5>SIMULASI BUAH NAGA</h5>
+					<span class="glyphicon glyphicon-grain effect-1" aria-hidden="true"></span>
+					<a href="/simulasi" style="text-decoration: none"><h5>SIMULASI BUAH NAGA</h5></a>
 					<p>Perhitungan simulasi pengembangan buah naga</p>
 				</div>
 				<div class="col-md-4 col-sm-3 col-xs-6 services-grid agileits-w3layouts">
 					<span class="glyphicon glyphicon-cog effect-1" aria-hidden="true"></span>
-					<h5>Panduan Simulasi</h5>
+					<a href="/panduan" style="text-decoration: none"><h5>Panduan Simulasi</h5></a>
 					<p>Tata cara penggunaan aplikasi simulasi buah naga</p>
 				</div>
 				<div class="col-md-4 col-sm-3 col-xs-6 services-grid agileits-w3layouts">
 					<span class="glyphicon glyphicon-tree-deciduous effect-1" aria-hidden="true"></span>
-					<h5>Manfaat Buah Naga</h5>
+					<a href="/manfaat" style="text-decoration: none"><h5>Manfaat Buah Naga</h5></a>
 					<p>Kelebihan dan nilai tambah dari konsumsi buah naga</p>
+				</div>
+				<div class="col-md-4 col-sm-3 col-xs-6 services-grid agileits-w3layouts">
+					<span class="glyphicon glyphicon-map-marker effect-1" aria-hidden="true"></span>
+					<a href="/lokasi" style="text-decoration: none"><h5>Daftar Lokasi</h5></a>
+					<p>Daftar Lokasi Perkebunan Buah Naga di Jawa Timur</p>
 				</div> 
 				<div class="clearfix"> </div>
 			</div>  
@@ -250,45 +255,45 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 <!-- //news -->
 
-<!-- count-down -->
-	<div class="count" >
-		<div class="container">
-			<h3 class="tittle" style="text-align: center;color: white;">Statistik <span>Buah Naga Rembangan</span></h3>
-		</div>
-		<div class="container">
-			<div class="col-md-3 agile_count_grid">
-				<div class="agile_count_grid_right">
-					<p class="counter">7</p>
-				</div>
-				<div class="clearfix"> </div>
-				<h3>MASA PRODUKSI</h3>
-			</div>
-			<div class="col-md-3 agile_count_grid">
-				<div class="agile_count_grid_right">
-					<p class="counter">12</p>
-				</div>
-				<div class="clearfix"> </div>
-				<h3>TONASE</h3>
-			</div>
-			<div class="col-md-3 agile_count_grid c3">
-				<div class="agile_count_grid_right">
-					<p class="counter">24</p>
-				</div>
-				<div class="clearfix"> </div>
-				<h3>PETANI</h3>
-			</div>
-			<div class="col-md-3 agile_count_grid c4">
-				<div class="agile_count_grid_right">
-					<p class="counter">4</p>
-				</div>
-				<div class="clearfix"> </div>
-				<h3>JENIS BUAH NAGA</h3>
-			</div>
-			<div class="clearfix"> </div>
+{{--<!-- count-down -->--}}
+	{{--<div class="count" >--}}
+		{{--<div class="container">--}}
+			{{--<h3 class="tittle" style="text-align: center;color: white;">Statistik <span>Buah Naga Rembangan</span></h3>--}}
+		{{--</div>--}}
+		{{--<div class="container">--}}
+			{{--<div class="col-md-3 agile_count_grid">--}}
+				{{--<div class="agile_count_grid_right">--}}
+					{{--<p class="counter">7</p>--}}
+				{{--</div>--}}
+				{{--<div class="clearfix"> </div>--}}
+				{{--<h3>MASA PRODUKSI</h3>--}}
+			{{--</div>--}}
+			{{--<div class="col-md-3 agile_count_grid">--}}
+				{{--<div class="agile_count_grid_right">--}}
+					{{--<p class="counter">12</p>--}}
+				{{--</div>--}}
+				{{--<div class="clearfix"> </div>--}}
+				{{--<h3>TONASE</h3>--}}
+			{{--</div>--}}
+			{{--<div class="col-md-3 agile_count_grid c3">--}}
+				{{--<div class="agile_count_grid_right">--}}
+					{{--<p class="counter">24</p>--}}
+				{{--</div>--}}
+				{{--<div class="clearfix"> </div>--}}
+				{{--<h3>PETANI</h3>--}}
+			{{--</div>--}}
+			{{--<div class="col-md-3 agile_count_grid c4">--}}
+				{{--<div class="agile_count_grid_right">--}}
+					{{--<p class="counter">4</p>--}}
+				{{--</div>--}}
+				{{--<div class="clearfix"> </div>--}}
+				{{--<h3>JENIS BUAH NAGA</h3>--}}
+			{{--</div>--}}
+			{{--<div class="clearfix"> </div>--}}
 
-		</div>
-	</div>
-<!-- //count-down -->
+		{{--</div>--}}
+	{{--</div>--}}
+{{--<!-- //count-down -->--}}
 
 <!-- team -->
 	<div class="team" id="team">
@@ -311,7 +316,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 					</div>
 				</div>
 				<div class="col-md-3 wthree-team-grid">
-					<img src="images/t2.jpg" alt="" />
+					<img src="images/yulis.jpg" alt="" />
 					<h4>Yulis Triani</h4>
 					<p>Sistem Analis</p>
 					<div class="team-social-grids">
@@ -324,7 +329,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 					</div>
 				</div>
 				<div class="col-md-3 wthree-team-grid">
-					<img src="images/1.jpg" alt="" />
+					<img src="images/devi.jpg" alt="" />
 					<h4>Devi Rohmatulloh</h4>
 					<p>Sistem Desainer</p>
 					<div class="team-social-grids">
@@ -350,7 +355,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 					</div>
 				</div>
 				<div class="col-md-3 wthree-team-grid">
-					<img src="images/t1.jpg" alt="" />
+					<img src="images/lanang.jpg" alt="" />
 					<h4>Lanang Nazula</h4>
 					<p>Tester</p>
 					<div class="team-social-grids">

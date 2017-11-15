@@ -22,6 +22,12 @@ class CreateLocationsTable extends Migration
             ["lokasi_instansi", "Lokasi Instansi", "Address", false, "", 8, 250, true],
             ["jenis_naga", "Jenis Buah Naga", "Dropdown", false, "", 0, 0, true, ["Buah Merah","Buah Putih","Buah Kuning","Buah Hitam"]],
         ]);
+        Schema::create ('locations',function(Blueprint $table)){
+            $table->increments('id');
+            $table->string('instansi');
+            $table->text('lokasi_instansi');
+            $table->String('jenis_naga');
+        }
 		
 		/*
 		Row Format:

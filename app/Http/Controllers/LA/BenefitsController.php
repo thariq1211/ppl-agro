@@ -22,7 +22,7 @@ use App\Models\Benefit;
 class BenefitsController extends Controller
 {
 	public $show_action = true;
-	public $view_col = 'manfaat';
+	public $view_col = 'jenis_naga';
 	public $listing_cols = ['id', 'jenis_naga', 'kandungan', 'manfaat'];
 	
 	public function __construct() {

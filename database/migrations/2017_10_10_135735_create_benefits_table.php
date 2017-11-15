@@ -17,12 +17,17 @@ class CreateBenefitsTable extends Migration
      */
     public function up()
     {
-        Module::generate("Benefits", 'benefits', 'manfaat', 'fa-plus-square-o', [
+        Module::generate("Benefits", 'benefits', 'jenis_naga', 'fa-plus-square-o', [
             ["jenis_naga", "Jenis Buah Naga", "Dropdown", false, "", 0, 0, true, ["Buah Naga Merah","Buah Naga Putih","Buah Naga Hitam","Buah Naga Kuning"]],
             ["kandungan", "Kandungan", "String", false, "", 8, 250, true],
-            ["manfaat", "Manfaat", "String", false, "", 8, 250, true],
+            ["manfaat", "Manfaat", "String", false, "", 20, 250, true],
         ]);
-		
+		Schema::create('benefits', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('jenis_naga');
+            $table->text('kandungan');
+            $table->text('manfaat');
+        });
 		/*
 		Row Format:
 		["field_name_db", "Label", "UI Type", "Unique", "Default_Value", "min_length", "max_length", "Required", "Pop_values"]

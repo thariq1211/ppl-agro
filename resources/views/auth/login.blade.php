@@ -5,8 +5,8 @@
 @endsection
 
 @section('content')
-<link rel="stylesheet" href="{{asset('cssmasuk/css/style.css')}}">
-<body class="hold-transition login-page" style="background-color: #2ecc71">
+<link rel="stylesheet" href="{{asset('ccsmasuk/css/style.css')}}">
+<body class="hold-transition login-page" style="background-image: url('img-asset/bg.jpg');">
     <div class="login-box">
         <div class="login-logo">
             <a href="{{ url('/home') }}"><b>{{ LAConfigs::getByKey('sitename_part1') }} </b>{{ LAConfigs::getByKey('sitename_part2') }}</a>

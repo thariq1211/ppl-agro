@@ -22,6 +22,11 @@ class CreateGuidesTable extends Migration
             ["panduan", "Panduan", "Textarea", false, "", 0, 0, true],
         ]);
 		
+        Schema::create('guides', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('jenis_naga');
+            $table->text('panduan');
+        });
 		/*
 		Row Format:
 		["field_name_db", "Label", "UI Type", "Unique", "Default_Value", "min_length", "max_length", "Required", "Pop_values"]

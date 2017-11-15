@@ -28,6 +28,13 @@ Route::get('/galeri', function () {
     return view('gallery');
 });
 
-Route::get('/lokasi', function () {
-    return view('vLocation');
-});
+Route::get('/lokasi', 'LokasiController@index');
+Route::get('/manfaat', 'ManfaatController@index');
+Route::get('/panduan', 'PanduanController@index');
+Route::post('cekTekstur', 'cekHasil@simpanDataTekstur');
+Route::post('cekTinggi', 'cekHasil@simpanDataKetinggian');
+Route::post('cekPupuk', 'cekHasil@simpanDataPupuk');
+Route::post('cekTemperatur', 'cekHasil@simpanDataTemperatur');
+Route::post('cekCahaya', 'cekHasil@simpanDataCahaya');
+Route::post('hasil', 'cekHasil@tampilkanHasil');
+Route::get('simulasi', 'cekHasil@index');

@@ -1,28 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <!-- Meta tag Keywords -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Farmed web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!--// Meta tag Keywords -->
+@extends('layouts.default')
 
-<!-- css files -->
-<link rel="stylesheet" href="css/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
-<link rel="stylesheet" href="css/style.css" type="text/css" media="all" /> <!-- Style-CSS --> 
-<link rel="stylesheet" href="css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
-<!-- //css files -->
-
-<!-- online-fonts -->
-<link href="//fonts.googleapis.com/css?family=Arima+Madurai:100,200,300,400,500,700,800,900&amp;subset=latin-ext,tamil,vietnamese" rel="stylesheet">
-<link href="//fonts.googleapis.com/css?family=Monda:400,700&amp;subset=latin-ext" rel="stylesheet">
-<!-- //online-fonts -->
-    <title></title>
-  </head>
-  <body>
+@section('content')
     <!-- gallery -->
 <div class="gallery w3layouts-agile" id="gallery">
 	<div class="container">
@@ -124,5 +102,4 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	</div>
 </div>
 <!-- //gallery -->
-  </body>
-</html>
+@endsection
