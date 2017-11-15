@@ -110,7 +110,7 @@
 	
 </style>
 <!-- style tag -->
- <form action="{{url('cekTekstur') }}" method="post" >
+ <form action="{{url('cekJenis') }}" method="post" >
     {{csrf_field()}}
     <div class="radio-group">
       <input type="radio" id="merah" name="jenisbuah" value="merah">
