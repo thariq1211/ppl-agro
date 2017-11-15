@@ -31,10 +31,12 @@ Route::get('/galeri', function () {
 Route::get('/lokasi', 'LokasiController@index');
 Route::get('/manfaat', 'ManfaatController@index');
 Route::get('/panduan', 'PanduanController@index');
+Route::post('cekJenis', 'cekHasil@simpanDataLuasLahan');
 Route::post('cekTekstur', 'cekHasil@simpanDataTekstur');
 Route::post('cekTinggi', 'cekHasil@simpanDataKetinggian');
 Route::post('cekPupuk', 'cekHasil@simpanDataPupuk');
 Route::post('cekTemperatur', 'cekHasil@simpanDataTemperatur');
 Route::post('cekCahaya', 'cekHasil@simpanDataCahaya');
 Route::post('hasil', 'cekHasil@tampilkanHasil');
+Route::get('ulang', 'cekHasil@Ulang');
 Route::get('simulasi', 'cekHasil@index');
