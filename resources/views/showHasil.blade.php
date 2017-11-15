@@ -36,7 +36,7 @@
                 <button type="button" class="btn btn-primary" onclick="window.print()">Cetak</button>
             </div>
             <div class="col-md-1">
-                <button type="button" class="btn btn-primary">Uji Coba Ulang</button>
+                <a href="{{url('ulang')}}" class="btn btn-primary"><span>Uji Coba Ulang</span></a>
             </div>
         </div>
     </div>
