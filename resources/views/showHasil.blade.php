@@ -11,19 +11,19 @@
                     <thead>
                     <tr>
                         <th>Jenis Buah Naga</th>
-                        <th>Hasil Produksi (dalam KG)</th>
-                        <th>Grade A</th>
-                        <th>Grade B</th>
-                        <th>Grade C</th>
+                        <th>Hasil Produksi (dalam jumlah)</th>
+                        <th>Kualitas Grade A</th>
+                        <th>Kualitas Grade B</th>
+                        <th>Kualitas Grade C</th>
                     </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Buah {{ Session::get('jenisbuah') }}</td>
-                            <td>{{ Session::get('hasilproduksi') }}</td>
-                            <td>{{Session::get('gradeA')}}</td>
-                            <td>{{Session::get('gradeB')}}</td>
-                            <td>{{Session::get('gradeC')}}</td>
+                            <td>{{ Session::get('hasilproduksi') }} Buah</td>
+                            <td>{{Session::get('gradeA')}} Buah</td>
+                            <td>{{Session::get('gradeB')}} Buah</td>
+                            <td>{{Session::get('gradeC')}} Buah</td>
                         </tr>
                     </tbody>
                 </table>
