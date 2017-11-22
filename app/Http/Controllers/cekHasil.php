@@ -52,13 +52,13 @@ class cekHasil extends Controller{
         $suhu = $request->session()->get('suhu');
         $cahaya = $request->session()->get('cahaya');
         $hujan = $request->session()->get('hujan');
-        $hasil =  ($luasLahan / $jarakTanam) * 4; //mengecek hasil kilogram perluas lahan
+        $hasil =  ($luasLahan / $jarakTanam); //mengecek hasil  perluas lahan
         $request->session()->put('hasilproduksi',$hasil);
 //        =========================================================
 //        pengecekan hasil buah naga merah grade A
         if ($buah=='merah'){
             if (($tekstur == 'tanahliat')){ //cek tekstur
-                $request->session()->put('bobotTekstur',0.15);
+                $request->session()->put('bobotTekstur',0.10);
                 if ($ketinggian == 'rendah'){ //cek ketinggian
                     $request->session()->put('bobotKetinggian',0.15);
                     if ($pH=='asam'){ //cek pH
@@ -152,7 +152,7 @@ class cekHasil extends Controller{
 
                 }
             } else {
-                $request->session()->put('bobotTekstur',0.10);
+                $request->session()->put('bobotTekstur',0.15);
                 if ($ketinggian == 'rendah'){
                     $request->session()->put('bobotKetinggian',0.15);
                     if ($pH=='asam'){
@@ -765,17 +765,22 @@ class cekHasil extends Controller{
         $bobotCahaya = $request->session()->get('bobotCahaya');
         $bobotKetinggian = $request->session()->get('bobotKetinggian');
         $hasilAnalisisA = ($bobotTekstur + $bobotHujan + $bobotSuhu + $bobotPupuk + $bobotCahaya +$bobotKetinggian) * $hasil;
-
-        $gradeB = 0.9;
-        $hasilAnalisisB = ($hasil - $hasilAnalisisA) * $gradeB;
-        $hasilAnalisisC = ($hasil - $hasilAnalisisA)- $hasilAnalisisB;
+        $hasilAnalisisC = $hasil * 0.1;
+        $hasilAnalisisB = $hasil - $hasilAnalisisC - $hasilAnalisisA;
         $request->session()->put('gradeA',$hasilAnalisisA);
         $request->session()->put('gradeB',$hasilAnalisisB);
         $request->session()->put('gradeC',$hasilAnalisisC);
         return view ('showHasil');
     }
     public function Ulang (Request $request){
-        $request->session()->flush();
-        return view('simulasi_jenisBuah');
+       $request->session()->forget('gradeA');
+       $request->session()->forget('gradeB');
+       $request->session()->forget('gradeC');
+       $request->session()->forget('bobotTekstur');
+       $request->session()->forget('bobotHujan');
+       $request->session()->forget('bobotPupuk');
+       $request->session()->forget('bobotCahaya');
+       $request->session()->forget('bobotKetinggian');
+       return view('simulasi_jenisBuah');
     }
 }
