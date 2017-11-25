@@ -9,7 +9,7 @@
 <body class="hold-transition login-page" style="background-image: url('img-asset/bg.jpg');">
     <div class="login-box">
         <div class="login-logo">
-            <a href="{{ url('/home') }}"><b>{{ LAConfigs::getByKey('sitename_part1') }} </b>{{ LAConfigs::getByKey('sitename_part2') }}</a>
+            <a href="{{ url('admin') }}"><b>{{ LAConfigs::getByKey('sitename_part1') }} </b>{{ LAConfigs::getByKey('sitename_part2') }}</a>
         </div>
 
     @if (count($errors) > 0)
@@ -23,22 +23,21 @@
         </div>
     @endif
 
-    <div class="login-box-body">
+    <div class="login-box-body" style="opacity: 0.7;border-radius: 8px;">
     <form action="{{ url('/login') }}" method="post" class="login-form">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="email" class="form-control" placeholder="Email" name="email"/>
-            <input type="password" class="form-control" placeholder="Password" name="password"/>
-            <button type="submit" class="btn btn-primary btn-block btn-flat">login</button>
+            <label for="email">Silahkan login untuk mengatur akun anda</label>
+            <input type="email" class="form-control" placeholder="Input Email" name="email"/>
+            <input type="password" class="form-control" placeholder="Input Password" name="password"/>
+            
         <div class="row">
-            <div class="col-xs-8">
+            <div class="col-xs-12">
                 <div class="checkbox icheck">
-                    <label>
-                        <p style="text-align: center;"><input type="checkbox" name="remember"> Remember Me</p>
-                    </label>
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Masuk</button>
                 </div>            
             </div><!-- /.col -->
             <div class="col-xs-8">
-                <a href="{{ url('/password/reset') }}">forgot my password</a><br>
+                <!-- <a href="{{ url('/password/reset') }}">forgot my password</a><br> -->
             </div>
             
         </div>
