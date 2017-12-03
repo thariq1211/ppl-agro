@@ -1,6 +1,29 @@
 @extends('layouts.simulasi')
 
 @section('bodytag')
+    <script type="text/javascript">
+        function validasi(form) {
+            function check_radio(radio)
+            {
+// memeriksa apakah radio button sudah ada yang dipilih
+                for (i = 0; i < radio.length; i++)
+                {
+                    if (radio[i].checked === true)
+                    {
+                        return radio[i].value;
+                    }
+                }
+                return false;
+            }
+            var radio_val = check_radio(form.ketinggian);
+            if (radio_val === false)
+            {
+                alert("Anda harus memilih salah satu");
+                return false;
+            }
+            return (true);
+        }
+    </script>
 <body style="
 	background-image: url('img-asset/ketinggian.jpg'); height: 100%;
 	width: 100%; 
@@ -108,7 +131,7 @@
 }
 </style>
 
-<form action="{{url('cekTinggi') }}" method="post">
+<form action="{{url('cekTinggi') }}" method="post" onsubmit="return validasi(this)">
     {{csrf_field()}}
  <div class="radio-group">
       <input type="radio" id="rendah" name="ketinggian" value="rendah">

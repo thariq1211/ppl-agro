@@ -1,6 +1,29 @@
 @extends('layouts.simulasi')
 
 @section('bodytag')
+    <script type="text/javascript">
+        function validasi(form) {
+            function check_radio(radio)
+            {
+// memeriksa apakah radio button sudah ada yang dipilih
+                for (i = 0; i < radio.length; i++)
+                {
+                    if (radio[i].checked === true)
+                    {
+                        return radio[i].value;
+                    }
+                }
+                return false;
+            }
+            var radio_val = check_radio(form.hujan);
+            if (radio_val === false)
+            {
+                alert("Anda harus memilih salah satu");
+                return false;
+            }
+            return (true);
+        }
+    </script>
 <body style="
 	background-image: url('img-asset/curah hujan.jpg'); height: 100%;
 	width: 100%; 
@@ -107,7 +130,7 @@
 }
 </style>
 
-<form method="post" action="{{url('hasil')}}">
+<form method="post" action="{{url('hasil')}}" onsubmit="return validasi(this)">
     {{csrf_field()}}
  <div class="radio-group">
       <input type="radio" id="rendah" name="hujan" value="rendah">

@@ -1,6 +1,35 @@
 @extends('layouts.simulasi')
 
 @section('bodytag')
+    <script type="text/javascript">
+        function Validasi(form) {
+            function check_radio(radio)
+            {
+            // memeriksa apakah radio button sudah ada yang dipilih
+                for (i = 0; i < radio.length; i++)
+                {
+                    if (radio[i].checked === true)
+                    {
+                        return radio[i].value;
+                    }
+                }
+                return false;
+            }
+            var radio_val = check_radio(form.jenisbuah);
+            if (radio_val === false){
+                alert("Anda harus memilih salah satu");
+                return false;
+            }
+            var luaslahan = document.getElementById('luasLahan').value;
+            var jaraktanam = document.getElementById('jarakTanam').value;
+
+            if  (luaslahan==""||jaraktanam==""){
+                alert("Mohon isi semua inputan");
+                return (false);
+            return (true);
+            }
+        }
+    </script>
 <body style="
 	background-image: url('img-asset/buah naga budidaya.jpg'); height: 100%;
 	width: 100%; 
@@ -110,7 +139,7 @@
 	
 </style>
 <!-- style tag -->
- <form action="{{url('cekJenis') }}" method="post" >
+ <form action="{{url('cekJenis') }}" method="post" onsubmit="return Validasi(this)">
     {{csrf_field()}}
     <div class="radio-group">
       <input type="radio" id="merah" name="jenisbuah" value="merah">
@@ -123,7 +152,7 @@
      <div class="col-sm-12" style="position: relative; margin-top: 26%; width: 35%;margin-left: 13%">
          <div class="row">
              <div class="col-md-2">
-                 <label for="luasLahan" class="col-md-2">Luas Lahan</label>
+                 <label for="luasLahan" class="col-md-2">Luas Lahan (HA)</label>
              </div>
              <div class="col-md-10">
                  <input class="form-control" type="number" id="luasLahan" placeholder="Luas Lahan (HA)" name="luasLahan">
